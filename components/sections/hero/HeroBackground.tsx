@@ -16,25 +16,44 @@ export function HeroBackground() {
         priority
       />
 
-      {/* Desktop Background Layers - Hidden on mobile */}
-      <div className='hidden md:block'>
-        {/* Background Layer 2 - Diagonal Orange Shape */}
+      {/* Desktop XL Layout (Laptop) */}
+      <div className='hidden xl:block 2xl:hidden'>
+        {/* Layer 2 - Diagonal Shape */}
         <Image
           src='/images/layer1.png'
           alt='Diagonal Shape'
-          width={1920}
-          height={800}
-          className='absolute top-0 left-0 w-full h-auto object-cover translate-y-[70px]'
+          fill
+          className='absolute top-0 left-0 w-screen h-screen object-cover translate-y-[2vh]'
           style={{ zIndex: 10 }}
         />
 
-        {/* Background Layer 3 - Cream Bottom */}
+        {/* Layer 3 - Cream Bottom */}
         <Image
-          src='/images/layer2.png'
+          src='/images/layer21.png'
           alt='Cream Background'
-          width={1920}
-          height={600}
-          className='absolute top-0 left-0 w-full h-auto object-cover translate-y-[70px]'
+          fill
+          className='absolute top-0 left-0 w-screen h-screen object-cover translate-y-[35vh]'
+          style={{ zIndex: 20 }}
+        />
+      </div>
+
+      {/* Desktop 2XL Layout (Monitor Besar) */}
+      <div className='hidden 2xl:block'>
+        {/* Layer 2 - Diagonal Shape */}
+        <Image
+          src='/images/layer1.png'
+          alt='Diagonal Shape'
+          fill
+          className='absolute top-0 left-0 w-screen h-screen object-cover translate-y-[1vh]'
+          style={{ zIndex: 10 }}
+        />
+
+        {/* Layer 3 - Cream Bottom */}
+        <Image
+          src='/images/layer21.png'
+          alt='Cream Background'
+          fill
+          className='absolute top-0 left-0 w-screen h-screen object-cover translate-y-[40vh]'
           style={{ zIndex: 20 }}
         />
       </div>

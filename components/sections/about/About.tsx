@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section
       id='tentang'
-      className='py-12 sm:py-16 md:py-24 lg:py-32 xl:py-[200px] relative overflow-hidden'
+      className=' sm:py-16 md:py-24 lg:py-32 xl:py-[210px] relative overflow-hidden z-30'
       style={{ backgroundColor: '#FBF2E0' }}
     >
       {/* Background decorative elements */}

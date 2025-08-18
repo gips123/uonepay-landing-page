@@ -16,13 +16,12 @@ export default function Hero() {
   return (
     <section
       id='beranda'
-      className='pt-24 min-h-screen relative flex items-center w-full'
+      className=' min-h-screen relative flex items-center w-full '
     >
       {/* Background Layers */}
       <HeroBackground />
 
-      {/* Desktop Assets */}
-      <HeroAssets />
+      
 
       <Container
         className='relative z-10 flex flex-col md:flex-row items-center px-4 sm:px-6'
@@ -32,10 +31,10 @@ export default function Hero() {
         <HeroContent introComplete={introComplete} />
 
         {/* Desktop spacing */}
-        <div className='hidden md:block flex-1'>
-          {/* Content area for text alignment on desktop */}
-        </div>
+        
       </Container>
+      {/* Desktop Assets */}
+      <HeroAssets />
     </section>
   );
 }

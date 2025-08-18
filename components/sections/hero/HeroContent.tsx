@@ -11,15 +11,16 @@ export function HeroContent({ introComplete }: HeroContentProps) {
   return (
     <>
       {/* Mobile UOnePayMobile Component - Only shown on mobile, positioned at top */}
-      <div className='w-full flex justify-center relative md:hidden mb-8'>
+      <div className='w-full flex justify-center relative xl:hidden mb-8'>
         <div className='transform scale-90'>
           <UOnePayMobile />
         </div>
       </div>
+      
 
-      <div className='flex-1 mb-8 md:mb-0 text-center md:text-left'>
+      <div className='xl:flex-1 mb-8 xl:mb-0 text-center md:text-left item-center xl:pr-[650px] '>
         <motion.h1
-          className='text-3xl md:text-4xl lg:text-[43px] font-extrabold text-white drop-shadow-lg leading-tight'
+          className='text-3xl xl:text-4xl 2xl:text-5xl lg:text-[43px] font-extrabold text-white drop-shadow-lg leading-tight'
           initial={{ opacity: 0, y: 50 }}
           animate={introComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -89,7 +90,11 @@ export function HeroContent({ introComplete }: HeroContentProps) {
             )
           )}
         </motion.div>
+
       </div>
+
+      
+      
     </>
   );
 }
