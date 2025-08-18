@@ -64,7 +64,7 @@ export function ContactInfoCard() {
           />
         </svg>
       ),
-      title: 'Jakarta Headquarters',
+      title: 'Our Headquarters',
       subtitle:
         'Ruko Harlin Nusukan Blok B12 Kota Surakarta, Jawa Tengah 57135',
     },

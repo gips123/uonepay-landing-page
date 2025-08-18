@@ -8,7 +8,6 @@ import { ContactConsultationCard } from './ContactConsultationCard';
 import { ContactPopup } from './ContactPopup';
 
 export default function Contact() {
-  const [showRegisterPopup, setShowRegisterPopup] = useState(false);
   const [showConsultationPopup, setShowConsultationPopup] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -87,7 +86,13 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <ContactRegisterCard
-              onRegisterClick={() => setShowRegisterPopup(true)}
+              onRegisterClick={() => {
+                // Trigger the register modal by clicking the hidden button
+                const registerTrigger = document.getElementById('register-trigger');
+                if (registerTrigger) {
+                  registerTrigger.click();
+                }
+              }}
             />
           </motion.div>
 
@@ -115,44 +120,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Register Popup */}
-      {showRegisterPopup && (
-        <ContactPopup
-          onClose={() => setShowRegisterPopup(false)}
-          onSubmit={async e => {
-            e.preventDefault();
-            setLoading(true);
-
-            const formData = new FormData(e.target as HTMLFormElement);
-
-            try {
-              const response = await fetch('/api/register', {
-                method: 'POST',
-                body: formData,
-              });
-
-              const result = await response.json();
-
-              if (response.ok) {
-                alert(
-                  'Registrasi berhasil! Kami akan menghubungi Anda segera.'
-                );
-                setShowRegisterPopup(false);
-              } else {
-                alert(result.error || 'Terjadi kesalahan saat registrasi.');
-              }
-            } catch (error) {
-              console.error('Registration error:', error);
-              alert('Terjadi kesalahan saat registrasi.');
-            } finally {
-              setLoading(false);
-            }
-          }}
-          loading={loading}
-          title='Daftar Sekarang'
-          description='Bergabunglah dengan ribuan perusahaan yang telah mempercayakan disbursement mereka kepada UONE PAY.'
-        />
-      )}
+      {/* Register Modal is handled by the global RegisterModal component */}
 
       {/* Consultation Popup */}
       {showConsultationPopup && (

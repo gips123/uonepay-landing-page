@@ -6,9 +6,16 @@ const nextConfig = {
   },
   serverExternalPackages: ['nodemailer'],
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000', // opsional, kalau kamu load dari http://localhost:3000
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
   },
+    
   env: {
     CUSTOM_KEY: 'my-value',
   },
